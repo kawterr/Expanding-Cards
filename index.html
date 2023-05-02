@@ -5,32 +5,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        /* Setting container to flex and 
-           width to 80% of view port */
+        /* the container is set to flex and the 
+           width to 100% of view port */
         .container {
+          padding-top: 50px;
           display: flex;
-          width: 80%;
+          width: 100%;
         }
-        /*Adding background image to each section*/
+        /*Each section will have a background image as a card*/
         .one {
           background: url(
-        https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210203171024/CSSTutorial.png);
+            https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2019/04/THAILAND.jpg?resize=768%2C432&ssl=1);
         }
         .two {
           background: url(
-        https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210203170945/HTML-Tutorials.png);
+            https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2019/04/NORTHWESTERN-USA-CANADA-1.jpg?resize=768%2C432&ssl=1);
         }
         .three {
           background: url(
-        https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210210175213/JavaScriptTutorial.png);
+            https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2014/04/whitehaven-beach-queensland-australia.jpg?resize=678%2C381&ssl=1);
         }
         .four {
           background: url(
-        https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210301162100/jquery.png);
+            https://i0.wp.com/theluxurytravelexpert.com/wp-content/uploads/2014/04/anse-source-dargent-seychelles.jpg?resize=678%2C382&ssl=1);
         }
         
-        /* Background properties and 
-           transition effect to section */
+        /* Section's properties and 
+           transition effects */
         .section {
           background-size: cover;
           background-position: center;
@@ -40,11 +41,10 @@
           flex: 0.2;
           margin: 8px;
           position: relative;
-          transition: all 0.7s ease-out;
+          transition: all 1s ease-out;
+          border-radius: 50px;
         }
-        
-        /* section with active class will
-           grow flex to 3 times */
+      
         .section.active {
           flex: 3;
         }
@@ -54,13 +54,12 @@
 
 <body>
 
-    <!-- Container -->
     <div class="container">
 
-        <!-- Div with section and active -->
+        <!-- only one Div active -->
         <div class="section one active"></div>
 
-        <!-- All another div with section -->
+        <!-- The rest of Divs -->
         <div class="section two"></div>
         <div class="section three"></div>
         <div class="section four"></div>
@@ -74,8 +73,8 @@
         sections.forEach((section) => {
           section.addEventListener("click", () => {
             
-            // remove active class from all another section and
-            // add it to the selected section
+            // active class will be removed from all sections 
+            // active class wil be added only to the clicked section
             sections.forEach((section) => {
               section.classList.remove("active");
             });
